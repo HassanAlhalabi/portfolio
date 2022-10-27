@@ -29,14 +29,11 @@ skillBars.each(function(){
 });
 
 // Show Back to top Button on 800px Scrolltop 
-$(window).on('scroll',function(){
-  console.log()
+$(window).on('scroll',function() {
   if($(window).scrollTop() > 800) {
     $('#to-top').addClass('show');
   } else {
-    
-        $('#to-top').removeClass('show');
-    
+    $('#to-top').removeClass('show');
   }
 })
 
@@ -44,7 +41,7 @@ $(window).on('scroll',function(){
 $('#to-top').click(function(){
     $('html,body').animate({
         scrollTop: 0
-    },1000)
+    },1000);
 });
 
 // GSAP ANIMATION

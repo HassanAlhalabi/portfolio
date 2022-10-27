@@ -116,6 +116,15 @@ animation.to('#alien-space-ship',{
     }
 });
 
+gsap.to('#alien-space-ship',
+    {
+        y: "10%",
+        yoyo: true,
+        repeat: -1
+    },
+);
+
+
 animation.fromTo('#astro-fly',
     {
         top: "70%",

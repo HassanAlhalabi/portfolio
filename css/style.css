@@ -289,24 +289,18 @@ h2#my-job {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     z-index: 3;
+    color: #FFF;
+    text-align: center;
 }
 
 h1#my-name {
-    font-size: 46px;
-    position: absolute;
     top: 20%;
     left: 50%;
-    transform: translateX(-50%);
 }
 
 h2#my-job {
-    font-size: 46px;
-    position: absolute;
     top: 30%;
     left: 50%;
-    color: #FFF;
-    text-align: center;
-    transform: translateX(-50%);
 }
 
 #astro,
@@ -318,7 +312,7 @@ h2#my-job {
 }
 
 #astro {
-    right: 40%;
+    right: 45%;
     bottom: 20%;
 }
 

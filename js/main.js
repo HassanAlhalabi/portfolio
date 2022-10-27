@@ -82,7 +82,7 @@ animation.to('#my-name',{
     x: "400px",
     duration: .1,
     scrollTrigger: {
-        scrub: true,
+        scrub: .5,
         start: 'top 5%'
     }
 })
@@ -92,7 +92,7 @@ animation.to('#my-job',{
     x: "-400px",
     duration: .1,
     scrollTrigger: {
-        scrub: true,
+        scrub: .5,
         start: 'top 5%'
     }
 })

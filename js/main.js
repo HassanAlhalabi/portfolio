@@ -1,19 +1,19 @@
 
 
 // Closing mobile menu 
-let showMobileList = document.querySelector('.show-mobile-list-btn');
-let closeMobileList = document.querySelector('.close-mobile-links a');
-let mobileMenu =  document.querySelector('.links-list-mobile-holder');
-showMobileList.onclick = () => {
-    if(!mobileMenu.classList.contains('show')) {
-        mobileMenu.classList.add('show')
-    } 
-}
-closeMobileList.onclick = () => {
-    if(mobileMenu.classList.contains('show')) {
-        mobileMenu.classList.remove('show')
-    } 
-}
+// let showMobileList = document.querySelector('.show-mobile-list-btn');
+// let closeMobileList = document.querySelector('.close-mobile-links a');
+// let mobileMenu =  document.querySelector('.links-list-mobile-holder');
+// showMobileList.onclick = () => {
+//     if(!mobileMenu.classList.contains('show')) {
+//         mobileMenu.classList.add('show')
+//     } 
+// }
+// closeMobileList.onclick = () => {
+//     if(mobileMenu.classList.contains('show')) {
+//         mobileMenu.classList.remove('show')
+//     } 
+// }
 
 //Set skills Percentage
 
@@ -46,3 +46,88 @@ $('#to-top').click(function(){
         scrollTop: 0
     },1000)
 });
+
+// GSAP ANIMATION
+gsap.registerPlugin(ScrollTrigger);
+
+const animation = gsap.timeline();
+
+// Stars Animation
+
+animation.fromTo('#header-star1',
+    {
+        top: "100%",
+        right: "random(0,200)"
+    },
+    {
+        top: "-100%",
+        right: "random(1000,2000)",
+        duration: 2,
+        repeat: -1,
+        repeatDelay: 3,
+        ease: 'linear',
+        repeatRefresh: true
+    }
+);
+
+// Header Text Animation
+
+gsap.from('#my-name, #my-job',{
+    top: 0,
+    duration: 1
+})
+
+animation.to('#my-name',{
+    y: '800px',
+    x: "400px",
+    duration: .1,
+    scrollTrigger: {
+        scrub: true,
+        start: 'top 5%'
+    }
+})
+
+animation.to('#my-job',{
+    y: '800px',
+    x: "-400px",
+    duration: .1,
+    scrollTrigger: {
+        scrub: true,
+        start: 'top 5%'
+    }
+})
+
+animation.to('#astro',{
+    x: "1000px",
+    duration: .1,
+    scrollTrigger: {
+        scrub: 1,
+        start: 'top 100px'
+    }
+});
+
+animation.to('#alien-space-ship',{
+    x: "-1000px",
+    y: "-1000",
+    duration: .1,
+    scrollTrigger: {
+        scrub: 1,
+        start: 'top 100px'
+    }
+});
+
+animation.fromTo('#astro-fly',
+    {
+        top: "70%",
+        left: "random(0,200)"
+    },
+    {
+        top: "-100%",
+        left: "random(1300,1500)",
+        duration: 5,
+        repeat: -1,
+        repeatDelay: 3,
+        ease: 'linear',
+        repeatRefresh: true
+    }
+);

@@ -10,17 +10,19 @@
     1-4- Paragraphs
     1-4- Lists
 
-2- Header Style
+2- Framework Classes
+
+3- Header Style
    2-1- Navbar Style
    2-2- Header Image Section
 
-3- Main Style   
+4- Main Style   
    3-1- About Me Section
    3-2- Skills Section
    3-3- Portfolio Section
    3-4- Contact Me Section
 
-4- Footer Style   
+5- Footer Style   
 
 ****************************************
 ***************************************
@@ -30,10 +32,23 @@
 
 /*************** Global Style ****************/
 
+/* Root  */
+
+:root {
+    --main-color: #1a166a;
+}
+
+/* HTML */
+
+html {
+    scroll-behavior: smooth;
+}
+
 /* Body */
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: fantasy;
+    overflow-x: hidden;
 }
 
 /* Headers */
@@ -43,8 +58,9 @@ h1 {
     margin: 0;
 }
 
+
 h2 {
-    color: #5000ca;
+    color: var(--main-color);
     font-weight: bold;
     font-size: 44px;
     padding: 30px 0px;
@@ -68,7 +84,7 @@ a:hover {
 }
 
 button {
-    background-color: #5000ca;
+    background-color: var(--main-color);
 }
 
 button:hover,
@@ -91,8 +107,11 @@ ul {
     padding: 0;
 }
 
+/*************** FrameWork ****************/
 
-
+.img-whiten {
+    filter: brightness(0) invert(1);
+}
 
 /*************** Header Style ****************/
 
@@ -109,6 +128,7 @@ nav {
     width: 100%;
     top: 0;
     left: 0;
+    z-index: 99;
 }
 
 @media(max-width: 624px ) {
@@ -127,8 +147,10 @@ a.brand-nav {
     padding-right: 0;
 }
 
-a.brand-nav h1 {
-    font-size: 34px
+#my-name {
+    font-size: 36px;
+    font-weight: 800;
+    color: #FFF;
 }
 
 ul.links-list {
@@ -150,7 +172,7 @@ ul.links-list li a:first-child {
 
 ul.links-list li a:hover  ,
 .show-mobile-list-btn:hover {
-    color: #5000ca;	 
+    color: var(--main-color);	 
 }
 
 .show-mobile-list-btn {
@@ -221,35 +243,114 @@ ul.links-list li a:hover  ,
 
 /* Header Image Section */
 
-.header-image-section {
-    background-image: linear-gradient(to top, #5000caaa , #5000ca11) , url('../imgs/gray-laptop-computer-showing-html-codes-in-shallow-focus-160107.jpg') ;
-    background-size: cover;
-    padding-top: 200px;
+header {
+    /* min-height: 100vh; */
+    position: relative;
+    z-index: 1;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
 }
 
-.who-am-i {
-    padding-bottom: 100px 0px;
+.header-star {
+    max-width: 10vw;
+    width: 100px;
+    position: absolute;
+    z-index: 2;
+    opacity: .9
+}
+
+#header-bg {
+    width: 100%;
+    /* position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2; */
+}
+
+#header-rocks,
+#header-rocks-right-corner  {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+}
+
+#header-rocks-right-corner {
+    left: 0;
+    z-index: 5;
+}
+
+h1#my-name,
+h2#my-job {
+    font-size: 46px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 3;
+}
+
+h1#my-name {
+    font-size: 46px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h2#my-job {
+    font-size: 46px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    color: #FFF;
+    text-align: center;
+    transform: translateX(-50%);
+}
+
+#astro,
+#alien-space-ship,
+#astro-fly {
+    position: absolute;
+    width: 5vw;
+    z-index: 4;
+}
+
+#astro {
+    right: 40%;
+    bottom: 20%;
+}
+
+#astro-fly {
+    z-index: 2;
+}
+
+#alien-space-ship {
+    top: 25%;
+    left: 25%;
+    width: 8vw;
 }
 
 .who-am-i h2 {
-    padding: 50px 0px;
-    text-align: center;
     font-size: 45px;
     font-weight: 900;
     color: #FFF;
-    transition: .7s;
 }
 
 @media(max-width: 500px) {
-    .who-am-i h2 {
+    h2#my-job {
         font-size: 2rem;
     }
 }
 
-.who-am-i h2 span {
-    background-color: #5000ca;
-    padding: 5px 15px;
-    text-shadow: -4px 3px 4px #4e4d4d;
+.header-wave,
+.skills-top-wave {
+    position: absolute;
+    top: 0;
+    transform: translateY(-95%);
+    left: 0;
+    width: 100%;
 }
 
 /*************** Main Style ****************/
@@ -257,19 +358,17 @@ ul.links-list li a:hover  ,
 /* About Me */
 
 .about-me {
-    min-height: 500px;
-    background-image: url('../imgs/svg/wave4.svg');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: top center;
-    padding: 150px 0px 0px;
+    padding: 50px 0px;
+    position: relative;
+    z-index: 6;
+    background-color: #FFF;
 }
 
 .about-me h2 {
     text-align: center;
 }
 
-.about-me .about-me-image-holder img {
+.about-me-image-holder img {
     width: 100%;
 }
 
@@ -277,8 +376,11 @@ ul.links-list li a:hover  ,
 
 .skills {
     padding: 100px 0px;
-    background-color: #5000ca;
+    background-color: var(--main-color);
+    position: relative;
+    z-index: 10;
 }
+
 
 .skills h2 {
     color: #FFF;
@@ -314,7 +416,7 @@ ul.links-list li a:hover  ,
 
 
 .project {
-    background-color: #5000ca;
+    background-color: var(--main-color);
     text-align: center;
     border-radius: 50%;
     width: 200px;
@@ -332,7 +434,7 @@ ul.links-list li a:hover  ,
 
 .contact-me {
     padding-bottom: 100px;
-    background-color: #5000ca;
+    background-color: var(--main-color);
 }
 
 .contact-me h2 {
@@ -351,7 +453,7 @@ ul.links-list li a:hover  ,
 /*************** Footer Style ****************/
 
 footer strong {
-    color: #5000ca;
+    color: var(--main-color);
 }
 
 .back-top {

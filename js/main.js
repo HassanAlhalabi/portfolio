@@ -91,14 +91,14 @@ headerAnimation.fromTo('#astro-fly',
 );
 
 
-freeAnimation.to('#astro-fly',
-    {   
-        y: "10px",
-        yoyo: true,
-        repeat: -1,
-        duration: .1,
-    },
-);
+// freeAnimation.to('#astro-fly',
+//     {   
+//         y: "10px",
+//         yoyo: true,
+//         repeat: -1,
+//         duration: .1,
+//     },
+// );
 
 freeAnimation.to('#alien-space-ship',
     {

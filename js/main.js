@@ -127,6 +127,13 @@ skillsAnime.to('#skills-astro-fly',
     },
 );
 
+gsap.to('#rover',{
+    y: '-1px',
+    duration: .1,
+    repeat: -1,
+    yoyou: true
+})
+
 skillsAnime.from('#rover',
     {
         right: "100%"
@@ -167,14 +174,14 @@ ScrollTrigger.create({
     // pinSpacing: false
 });
 
-ScrollTrigger.create({
-    trigger: "#portfolio",
-    pin: true,
-    anticipatePin: 1,
-    scrub: true,
-    start: "top top",
-    end: "+=3000"
-});
+// ScrollTrigger.create({
+//     trigger: "#portfolio",
+//     pin: true,
+//     anticipatePin: 1,
+//     scrub: true,
+//     start: "top top",
+//     end: "+=3000"
+// });
 
 
 // gsap.fromTo('.mobile-skills .skills-list',

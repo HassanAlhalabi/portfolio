@@ -131,6 +131,7 @@ skillsAnime.from('#rover',
     {
         right: "100%"
     },
+    "<1"
 );
 
 

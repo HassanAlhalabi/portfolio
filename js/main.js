@@ -47,11 +47,23 @@ $('#to-top').click(function(){
 // GSAP ANIMATION
 gsap.registerPlugin(ScrollTrigger);
 
-const animation = gsap.timeline();
+const headerAnimation = gsap.timeline();
+
+const freeAnimation = gsap.timeline();
+
+ScrollTrigger.create({
+    trigger: "header",
+    pin: true,
+    scrub: true,
+    start: "top top",
+    end: "+=1000",
+    pinSpacing: false
+    
+});
 
 // Stars Animation
 
-animation.fromTo('#header-star1',
+headerAnimation.fromTo('#header-star1',
     {
         top: "100%",
         right: "random(0,200)"
@@ -67,14 +79,7 @@ animation.fromTo('#header-star1',
     }
 );
 
-// Header Text Animation
-
-gsap.from('#my-name, #my-job',{
-    top: 0,
-    duration: 1
-})
-
-animation.to('#my-name',{
+headerAnimation.to('#my-name',{
     y: '800px',
     x: "400px",
     duration: .1,
@@ -84,7 +89,7 @@ animation.to('#my-name',{
     }
 })
 
-animation.to('#my-job',{
+headerAnimation.to('#my-job',{
     y: '800px',
     x: "-400px",
     duration: .1,
@@ -94,7 +99,7 @@ animation.to('#my-job',{
     }
 })
 
-animation.to('#astro',{
+headerAnimation.to('#astro',{
     x: "1000px",
     duration: .1,
     scrollTrigger: {
@@ -103,26 +108,19 @@ animation.to('#astro',{
     }
 });
 
-animation.to('#alien-space-ship',{
-    x: "-1000px",
-    y: "-1000",
-    duration: .1,
-    scrollTrigger: {
-        scrub: 1,
-        start: 'top 100px'
-    }
-});
-
-gsap.to('#alien-space-ship',
+headerAnimation.to('#alien-space-ship',
     {
-        y: "10%",
-        yoyo: true,
-        repeat: -1
-    },
+        top: "-1000px",
+        left: "-1000px",
+        duration: .1,
+        scrollTrigger: {
+            scrub: 1,
+            start: 'top 100px'
+        }
+    }
 );
 
-
-animation.fromTo('#astro-fly',
+headerAnimation.fromTo('#astro-fly',
     {
         top: "70%",
         left: "random(0,200)"
@@ -137,3 +135,116 @@ animation.fromTo('#astro-fly',
         repeatRefresh: true
     }
 );
+
+
+freeAnimation.to('#astro-fly',
+    {   
+        y: "10px",
+        yoyo: true,
+        repeat: -1,
+        duration: .1,
+    },
+);
+
+freeAnimation.to('#alien-space-ship',
+    {
+        y: "10%",
+        yoyo: true,
+        repeat: -1
+    },
+);
+
+freeAnimation.from('#my-name, #my-job',{
+    top: 0,
+    duration: 1
+})
+
+
+
+// Skills
+
+const skillsAnime = gsap.timeline();
+
+skillsAnime.to('#skills-astro-fly',
+    {
+        x: "1600px",
+        y: "300px",
+        duration: 1,
+        // scrollTrigger: {
+        //     start: "800px center",
+        //     scrub: true,
+        // }
+    },
+);
+
+
+skillsAnime.fromTo('.d-skills-list',
+    {
+        y: "-50%",
+        opacity: 0
+    },
+    {
+        y: "0px",
+        opacity: 1,
+        duration: .4,
+        // scrollTrigger: {
+        //     start: "50% 50%",
+        //     // action
+        //     scrub: true,
+        //     toggleActions: "restart none none reverse",
+        //     markers: true,
+        // },
+        stagger: .4
+    },
+    "<.1"
+);
+
+ScrollTrigger.create({
+    animation: skillsAnime,
+    trigger: "#skills",
+    pin: true,
+    anticipatePin: 1,
+    scrub: true,
+    start: "top top",
+    end: "+=3000"
+});
+
+// gsap.fromTo('.mobile-skills .skills-list',
+//     {
+//         y: "-100%",
+//         opacity: 0
+//     },
+//     {
+//         y: "0px",
+//         opacity: 1,
+//         duration: .5,
+//         scrollTrigger: {
+//             //     start scroll-start
+//             start: "30% center",
+//             // action
+//             toggleActions: "restart none none reverse",
+//             // markers: true,
+//         },
+//         stagger: 1.2
+//     },
+// );
+
+
+
+
+// gsap.fromTo('.rock',
+//     {
+//         y: "100%"
+//     },
+//     {
+//         y: "10px",
+//         duration: 1,
+//         scrollTrigger: {
+//             start: "center 30%",
+//             // action
+//             toggleActions: "restart none none reverse",
+//             markers: true,
+//         },
+//         stagger: 1
+//     },
+// );

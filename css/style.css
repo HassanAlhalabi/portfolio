@@ -35,7 +35,7 @@
 /* Root  */
 
 :root {
-    --main-color: #1a166a;
+    --main-color: #0f0537;
 }
 
 /* HTML */
@@ -50,6 +50,7 @@ body {
     font-family: fantasy;
     overflow-x: hidden;
     letter-spacing: 2px;
+    background-color: var(--main-color);
 }
 
 /* Headers */
@@ -245,12 +246,10 @@ ul.links-list li a:hover  ,
 /* Header Image Section */
 
 header {
-    /* min-height: 100vh; */
+    min-height: 100vh;
+    min-width: 100vw;
     position: relative;
     z-index: 1;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
 }
 
 .header-star {
@@ -262,7 +261,9 @@ header {
 }
 
 #header-bg {
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
     /* position: absolute;
     bottom: 0;
     left: 0;
@@ -271,7 +272,9 @@ header {
 
 #header-rocks,
 #header-rocks-right-corner  {
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -285,7 +288,7 @@ header {
 
 h1#my-name,
 h2#my-job {
-    font-size: 46px;
+    font-size: calc(1.6vw + 18px);
     position: absolute;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -309,12 +312,12 @@ h2#my-job {
 #alien-space-ship,
 #astro-fly {
     position: absolute;
-    width: 5vw;
+    width: 6vw;
     z-index: 4;
 }
 
 #astro {
-    right: 45%;
+    right: 40%;
     bottom: 20%;
 }
 
@@ -323,8 +326,8 @@ h2#my-job {
 }
 
 #alien-space-ship {
-    top: 15%;
-    left: 25%;
+    top: 30%;
+    left: 30%;
     width: 8vw;
 }
 
@@ -343,40 +346,61 @@ h2#my-job {
 .header-wave,
 .skills-top-wave {
     position: absolute;
-    top: 0;
-    transform: translateY(-95%);
     left: 0;
     width: 100%;
 }
 
+.header-wave {
+    bottom: 0;
+    z-index: 6;
+}
+
+.header-wave:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    box-shadow: 0px 0px 1px 0px #19002A;
+}
+
 /*************** Main Style ****************/
 
-/* About Me */
-
-.about-me {
-    padding: 50px 0px;
-    position: relative;
-    z-index: 6;
-    background-color: #FFF;
-}
-
-.about-me h2 {
-    text-align: center;
-}
-
-.about-me-image-holder img {
-    width: 100%;
-}
 
 /* Skills */
 
 .skills {
-    padding: 100px 0px;
     background-color: var(--main-color);
     position: relative;
     z-index: 10;
+    width: 100vw;
+    height: 100vh;
 }
 
+.skills-inner {
+    position: absolute;
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+}
+
+.skills-top-wave {
+    bottom: 100%;
+}
+
+#skills-astro-fly {
+    rotate: 40deg;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: -150px;
+}
+
+#skills-bg {
+    width: 100vw;
+    min-height: 100vh;
+    object-fit: cover;
+}
 
 .skills h2 {
     color: #FFF;
@@ -393,20 +417,78 @@ h2#my-job {
     font-size: 21px;
 }
 
-.skill-bar-percentage {
-    height: 30px;
-    width: 50%;
-    background-color: #FFF;
-    border-radius: 5px;
+
+.skills-list {
+    position: absolute;
+    z-index: 12;
+    margin: 0;
+    padding: 0;
+    list-style: url('../imgs/list-rock.png');
+    color: #FFF;
+    font-size: 34px;
+    text-shadow: 0px 2px 10px #1d0f67;
+}
+
+
+@media(max-width: 771px) {
+    .skills-list {
+        position: static;
+    }
+}
+.skills-list:nth-of-type(1) {
+    top: 10%;
+    left: 10%;
+}
+
+.skills-list:nth-of-type(2) {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.skills-list:nth-of-type(3) {
+    bottom: 10%;
+    right: 10%;
+}
+
+.skills-list:nth-of-type(4) {
+    bottom: 10%;
+    left: 10%;
+}
+
+@media(max-width: 567px) {
+    .skills-list:nth-of-type(1) {
+        top: 5%;
+        left: 5%;
+    }
+    
+    .skills-list:nth-of-type(3) {
+        bottom: 5%;
+        right: 5%;
+    }
+}
+
+.mobile-skills {
+    background-size: cover;
+    padding: 50px;
+}
+
+.mobile-skills .skills-list {
+    position: static;
+    transform: none;
+}
+
+/* .rocks-holder {
+    position: absolute;
+    bottom: 0;
+    left: 0;;
     display: flex;
 }
 
-.skill-bar-percentage span {
-    font-weight: bold;
-    color: #666;
-    margin: auto;
-}
-
+.rocks-holder .rock {
+    width: 130px;
+    filter: drop-shadow(0px 0px 15px #FFF);
+} */
 
 /* Portfolio */
 

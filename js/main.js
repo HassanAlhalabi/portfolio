@@ -1,49 +1,4 @@
 
-
-// Closing mobile menu 
-// let showMobileList = document.querySelector('.show-mobile-list-btn');
-// let closeMobileList = document.querySelector('.close-mobile-links a');
-// let mobileMenu =  document.querySelector('.links-list-mobile-holder');
-// showMobileList.onclick = () => {
-//     if(!mobileMenu.classList.contains('show')) {
-//         mobileMenu.classList.add('show')
-//     } 
-// }
-// closeMobileList.onclick = () => {
-//     if(mobileMenu.classList.contains('show')) {
-//         mobileMenu.classList.remove('show')
-//     } 
-// }
-
-//Set skills Percentage
-
-let skillBars = $('.skill-bar-percentage')
-// let percentage = skillBar.getAttribute('data-percentage');
-// skillBar.onclick = () => {
-//     console.log(skillBars)
-// }
-
-skillBars.each(function(){
-    $(this).css('width',''+$(this).data('percentage')+'%');
-    $(this).find('span').text($(this).data('percentage')+' %')
-});
-
-// Show Back to top Button on 800px Scrolltop 
-$(window).on('scroll',function() {
-  if($(window).scrollTop() > 800) {
-    $('#to-top').addClass('show');
-  } else {
-    $('#to-top').removeClass('show');
-  }
-})
-
-//Back to Top Animate
-$('#to-top').click(function(){
-    $('html,body').animate({
-        scrollTop: 0
-    },1000);
-});
-
 // GSAP ANIMATION
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,7 +13,6 @@ ScrollTrigger.create({
     start: "top top",
     end: "+=1000",
     pinSpacing: false
-    
 });
 
 // Stars Animation
@@ -170,10 +124,12 @@ skillsAnime.to('#skills-astro-fly',
         x: "1600px",
         y: "300px",
         duration: 1,
-        // scrollTrigger: {
-        //     start: "800px center",
-        //     scrub: true,
-        // }
+    },
+);
+
+skillsAnime.from('#rover',
+    {
+        right: "100%"
     },
 );
 
@@ -206,8 +162,19 @@ ScrollTrigger.create({
     anticipatePin: 1,
     scrub: true,
     start: "top top",
+    end: "+=3000",
+    // pinSpacing: false
+});
+
+ScrollTrigger.create({
+    trigger: "#portfolio",
+    pin: true,
+    anticipatePin: 1,
+    scrub: true,
+    start: "top top",
     end: "+=3000"
 });
+
 
 // gsap.fromTo('.mobile-skills .skills-list',
 //     {

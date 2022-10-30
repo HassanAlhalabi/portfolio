@@ -385,7 +385,7 @@ h2#my-job {
 }
 
 .skills-top-wave {
-    bottom: 100%;
+    bottom: calc(100% - 1px);
 }
 
 #skills-astro-fly {
@@ -396,10 +396,18 @@ h2#my-job {
     left: -150px;
 }
 
-#skills-bg {
+#skills-bg,
+#skills-bg-corner {
     width: 100vw;
     min-height: 100vh;
     object-fit: cover;
+}
+
+#skills-bg-corner {
+    position: absolute;
+    z-index: 12;
+    bottom: 0;
+    left: 0;
 }
 
 .skills h2 {
@@ -420,7 +428,7 @@ h2#my-job {
 
 .skills-list {
     position: absolute;
-    z-index: 12;
+    z-index: 13;
     margin: 0;
     padding: 0;
     list-style: url('../imgs/list-rock.png');
@@ -441,9 +449,9 @@ h2#my-job {
 }
 
 .skills-list:nth-of-type(2) {
-    top: 50%;
+    top: 40%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%);
 }
 
 .skills-list:nth-of-type(3) {
@@ -478,6 +486,15 @@ h2#my-job {
     transform: none;
 }
 
+#rover {
+    position: absolute;
+    bottom: 10%;
+    right: 40%;
+    z-index: 11;
+    width: 20vw;
+    transform: rotateY(180deg);
+}
+
 /* .rocks-holder {
     position: absolute;
     bottom: 0;
@@ -491,6 +508,11 @@ h2#my-job {
 } */
 
 /* Portfolio */
+
+#portfolio {
+    position: relative;
+    z-index: 20;
+}
 
 
 .project {

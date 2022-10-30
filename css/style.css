@@ -121,127 +121,12 @@ header {
     position: relative;
 }
 
-/* Navbar Style */
-
-nav {
-    background-color: transparent; 
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 99;
-}
-
-@media(max-width: 624px ) {
-    .desktop-nav {
-        display: none;
-    }
-
-    nav .nav-inner {
-        display: flex;
-        justify-content: space-between;
-    }
-}
-
-a.brand-nav {
-    padding-left: 0;
-    padding-right: 0;
-}
-
 #my-name {
     font-size: 36px;
     font-weight: 800;
     color: #FFF;
 }
 
-ul.links-list {
-    list-style: none;
-    display: flex;
-}
-
-ul.links-list li {
-    display: inline-block;
-}
-
-ul.links-list li a {
-    padding-top: 10px;
-}
-
-ul.links-list li a:first-child {
-    padding-left: 0;
-}
-
-ul.links-list li a:hover  ,
-.show-mobile-list-btn:hover {
-    color: var(--main-color);	 
-}
-
-.show-mobile-list-btn {
-    display: none;
-    border: none;
-    outline: none;
-    padding: 20px;
-    color: #FFF;
-    background-color:transparent;
-    cursor: pointer;
-    transition: .6s;
-}
-
-@media (max-width: 624px ) {
-    .show-mobile-list-btn {
-        display: block;
-        padding-right: 0;
-    }
-}
-
-.links-list-mobile-holder {
-    position: fixed;
-    top: 0;
-    right: 100%;
-    height: 100%;
-    background-color: rgba(22, 22, 22, 0.877);
-    transition: .6s;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.links-list-mobile-holder.show {
-    right: 0;
-}
-
-@media (min-width: 625px ) {
-    .links-list-mobile-holder {
-        display: none;
-    }
-}
-
-.links-list-mobile {
-    flex-grow: 1;
-}
-
-.links-list-mobile li a {
-    display: block;
-}
-
-.close-mobile-links a {
-    padding: 16px 30px;
-}
-
-.close-mobile-links a:hover {
-    background-color: transparent;
-    color: #FFF;
-}
-
-.close-mobile-links a span {
-    display: inline-block;
-    transition: 1s;
-}
-
-.close-mobile-links a:hover span {
-    transform: rotate(360deg);
-}
 
 /* Header Image Section */
 
@@ -314,6 +199,7 @@ h2#my-job {
     position: absolute;
     width: 6vw;
     z-index: 4;
+    min-width: 50px;
 }
 
 #astro {

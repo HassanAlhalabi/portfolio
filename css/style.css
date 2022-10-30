@@ -260,6 +260,10 @@ h2#my-job {
     width: 100%;
 }
 
+.skills-top-wave img {
+    filter: drop-shadow(0px -8px 5px #FFFFFF22);
+}
+
 .header-wave {
     bottom: 0;
     z-index: 6;

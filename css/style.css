@@ -320,7 +320,7 @@ h2#my-job {
 #skills-bg,
 #skills-bg-corner {
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
     object-fit: cover;
 }
 

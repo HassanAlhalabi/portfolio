@@ -1,5 +1,5 @@
 // Page Loader
-(document.onload = () => {
+(window.onload = () => {
     document.getElementById('page-loader').remove();
 })();
 

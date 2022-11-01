@@ -1,4 +1,10 @@
 
+// Page Loader
+(window.onload = () => {
+    document.getElementById('page-loader').remove();
+})();
+
+
 // GSAP ANIMATION
 gsap.registerPlugin(ScrollTrigger);
 

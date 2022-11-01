@@ -81,7 +81,7 @@ headerAnimation.fromTo('#astro-fly',
     },
     {
         top: "-100%",
-        left: "random(1300,1500)",
+        left: "random(1500,1800)",
         duration: 5,
         repeat: -1,
         repeatDelay: 3,

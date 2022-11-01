@@ -222,7 +222,7 @@ h2#my-job {
     position: absolute;
     width: 6vw;
     z-index: 4;
-    min-width: 50px;
+    min-width: 65px;
 }
 
 #astro {

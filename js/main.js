@@ -1,3 +1,8 @@
+// Page Loader
+(document.onload = () => {
+    document.getElementById('page-loader').remove();
+})();
+
 
 // Page Loader
 (window.onload = () => {

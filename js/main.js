@@ -1,8 +1,8 @@
 
 // Page Loader
-(window.onload = () => {
-    document.getElementById('page-loader').remove();
-})();
+window.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('page-loader').style.display = 'none';
+});
 
 
 // GSAP ANIMATION

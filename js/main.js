@@ -6,6 +6,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 // GSAP ANIMATION
+
+// Plugins Register
+gsap.registerPlugin(MotionPathPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 const headerAnimation = gsap.timeline();
@@ -127,9 +130,9 @@ const skillsAnime = gsap.timeline();
 
 skillsAnime.to('#skills-astro-fly',
     {
-        x: "1600px",
-        y: "300px",
-        duration: 1,
+        top: "30%",
+        left: "calc(100% + 40px)",
+        duration: 2,
     },
 );
 
@@ -157,13 +160,6 @@ skillsAnime.fromTo('.d-skills-list',
         y: "0px",
         opacity: 1,
         duration: .4,
-        // scrollTrigger: {
-        //     start: "50% 50%",
-        //     // action
-        //     scrub: true,
-        //     toggleActions: "restart none none reverse",
-        //     markers: true,
-        // },
         stagger: .4
     },
     "<.1"
@@ -177,55 +173,72 @@ ScrollTrigger.create({
     scrub: true,
     start: "top top",
     end: "+=3000",
-    // pinSpacing: false
 });
 
-// ScrollTrigger.create({
-//     trigger: "#portfolio",
-//     pin: true,
-//     anticipatePin: 1,
-//     scrub: true,
-//     start: "top top",
-//     end: "+=3000"
-// });
+
+const portfolioAnime = gsap.timeline();
+
+portfolioAnime.fromTo('#portfolio-astro-fly',
+    {
+        top: "30%",
+        left: "calc(100% + 200px)",
+    },
+    {
+        top: "90%",
+        left: "-100%",
+        duration: 2,
+    },
+);
+
+ScrollTrigger.create({
+    animation: portfolioAnime,
+    trigger: "#portfolio",
+    pin: true,
+    // pinSpacing: false,
+    anticipatePin: 1,
+    scrub: true,
+    start: "top top",
+    end: "+=2000"
+});
+
+const planetsAnime = gsap.timeline();
+
+planetsAnime.fromTo(".planet", 
+    {
+        top: "30%",
+        left: "10%",
+    },
+    {
+        top: "10%",
+        left: "40%",
+        duration: .5,
+    },
+);
+
+planetsAnime.fromTo('.projects-list',
+    {
+        y: "-50%",
+        opacity: 0
+    },
+    {
+        y: "0px",
+        opacity: 1,
+        duration: .4,
+        stagger: .4
+    },
+    "<.1"
+);
+
+ScrollTrigger.create({
+    animation: planetsAnime,
+    trigger: "#portfolio",
+    scrub: .5,
+    start: "top top",
+    end: "+=1000",
+});
 
 
-// gsap.fromTo('.mobile-skills .skills-list',
-//     {
-//         y: "-100%",
-//         opacity: 0
-//     },
-//     {
-//         y: "0px",
-//         opacity: 1,
-//         duration: .5,
-//         scrollTrigger: {
-//             //     start scroll-start
-//             start: "30% center",
-//             // action
-//             toggleActions: "restart none none reverse",
-//             // markers: true,
-//         },
-//         stagger: 1.2
-//     },
-// );
 
 
 
 
-// gsap.fromTo('.rock',
-//     {
-//         y: "100%"
-//     },
-//     {
-//         y: "10px",
-//         duration: 1,
-//         scrollTrigger: {
-//             start: "center 30%",
-//             // action
-//             toggleActions: "restart none none reverse",
-//             markers: true,
-//         },
-//         stagger: 1
-//     },
-// );

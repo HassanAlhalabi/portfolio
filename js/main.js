@@ -209,9 +209,12 @@ planetsAnime.fromTo(".planet",
         left: "10%",
     },
     {
-        top: "10%",
-        left: "40%",
-        duration: .5,
+        // top: "10%",
+        // left: "40%",
+        duration: 4,
+        motionPath: { 
+            path: "M -28 30 C 913 17 707 288 -445 656"
+          }
     },
 );
 
@@ -232,10 +235,13 @@ planetsAnime.fromTo('.projects-list',
 ScrollTrigger.create({
     animation: planetsAnime,
     trigger: "#portfolio",
+    // pinSpacing: false,
+    anticipatePin: 1,
     scrub: .5,
     start: "top top",
     end: "+=1000",
 });
+
 
 
 

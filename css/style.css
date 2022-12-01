@@ -499,6 +499,15 @@ h2#my-job {
     z-index: 22;
 }
 
+.portfolio-top-wave {
+    position: absolute;
+    bottom: calc(100% - 5px);
+    z-index: 999999;
+    left: 0;
+    width: 100%;
+    filter: drop-shadow(0px -10px 5px #FFFFFF22);
+}
+
 .portfolio-bg-planet {
     z-index: 23;
 }
@@ -541,7 +550,7 @@ h2#my-job {
 }
 
 .projects-list li:not(:nth-child(1)) {
-    list-style: url('../imgs/list-rock.png');
+    /* list-style: url('../imgs/list-rock.png'); */
 }
 
 .projects-list:nth-of-type(1) {

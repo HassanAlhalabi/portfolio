@@ -201,6 +201,16 @@ ScrollTrigger.create({
     end: "+=2000"
 });
 
+freeAnimation.to('.space-rock',
+    {
+        y: "10%",
+        yoyo: true,
+        repeat: -1,
+        duration: 1,
+        ease: 'ease-in-out',
+    },
+);
+
 const planetsAnime = gsap.timeline();
 
 planetsAnime.fromTo(".planet", 
@@ -213,7 +223,7 @@ planetsAnime.fromTo(".planet",
         // left: "40%",
         duration: 4,
         motionPath: { 
-            path: "M -28 30 C 913 17 707 288 -445 656"
+            path: "M -28 30 C 913 17 707 288 -286 580"
           }
     },
 );
@@ -237,9 +247,9 @@ ScrollTrigger.create({
     trigger: "#portfolio",
     // pinSpacing: false,
     anticipatePin: 1,
-    scrub: .5,
+    scrub: 1,
     start: "top top",
-    end: "+=1000",
+    end: "+=2000",
 });
 
 

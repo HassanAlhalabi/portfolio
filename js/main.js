@@ -219,8 +219,6 @@ planetsAnime.fromTo(".planet",
         left: "10%",
     },
     {
-        // top: "10%",
-        // left: "40%",
         duration: 4,
         motionPath: { 
             path: "M -28 30 C 913 17 707 288 -286 580"
@@ -252,7 +250,35 @@ ScrollTrigger.create({
     end: "+=2000",
 });
 
+// Contact Animation
 
+const contactAnime = gsap.timeline();
+
+contactAnime.fromTo('#contact-astro-fly',
+    {
+        top: "0px",
+        left: "-100px",
+    },
+    {
+        // top: "60%",
+        // left: "100%",
+        motionPath: {
+            path: 'M -28 30 C 486 62 384 193 676 62 C 1165 185 799 305 1285 237 C 1437 62 1734.3333 341.6667 1960 386'
+        },
+        duration: 2,
+    },
+);
+
+ScrollTrigger.create({
+    animation: contactAnime,
+    trigger: "#contact-me",
+    pin: true,
+    // pinSpacing: false,
+    anticipatePin: 1,
+    scrub: 1,
+    start: "top top",
+    end: "+=2000",
+});
 
 
 

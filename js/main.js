@@ -280,6 +280,36 @@ ScrollTrigger.create({
     end: "+=2000",
 });
 
+const explode = () => {
+    return freeAnimation.fromTo('.boom',
+        {
+            transform: "scale(0)",
+            opacity: 1
+        },
+        {
+            transform: "scale(1)",
+            opacity: 0,
+            duration: .4,
+            stagger: .1,
+            repeat: 1,
+        }
+    ); 
+}
+
+window.onscroll = () => {
+    const offsetLeft = 
+            window.innerWidth - document.getElementById('contact-astro-fly').getBoundingClientRect().left;
+        if(offsetLeft <= 0 && offsetLeft >= -100) {
+            setTimeout(() => 
+                explode()
+            ,1000);
+        } else {
+            clearTimeout(explode);
+        }
+}
+
+
+
 
 
 

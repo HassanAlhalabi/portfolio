@@ -24,7 +24,9 @@ ScrollTrigger.create({
     pinSpacing: false
 });
 
-// Stars Animation
+// ****************************************************************** //
+// ***************************** Header ***************************** //
+// ****************************************************************** //
 
 headerAnimation.fromTo('#header-star1',
     {
@@ -122,59 +124,139 @@ freeAnimation.from('#my-name, #my-job',{
     duration: 1
 })
 
+// ****************************************************************** //
+// ***************************** Skills ***************************** //
+// ****************************************************************** //
 
+const skillsDesktopAnime = gsap.timeline();
+const skillsMobileAnime = gsap.timeline();
 
-// Skills
+// Desktop Animation //
+const skillsDesktopAstroFlyTrigger = () => {
+    skillsDesktopAnime.to('#skills-astro-fly',
+        {
+            top: "30%",
+            left: "120%",
+            duration: 2,
+        },
+    );
+}
 
-const skillsAnime = gsap.timeline();
-
-skillsAnime.to('#skills-astro-fly',
-    {
-        top: "30%",
-        left: "calc(100% + 40px)",
-        duration: 2,
-    },
-);
-
-gsap.to('#rover',{
-    y: '-1px',
-    duration: .1,
-    repeat: -1,
-    yoyou: true
-})
-
-skillsAnime.from('#rover',
+const skillsDesktopRoverTrigger = () => {
+    gsap.to('#rover',{
+        y: '-1px',
+        duration: .1,
+        repeat: -1,
+        yoyou: true
+    });
+    skillsDesktopAnime.from('#rover',
     {
         right: "100%"
     },
-    "<1"
-);
+    "<1");
+}
 
+const skillsDesktopListAnimeTrigger = () => {
+    skillsDesktopAnime.fromTo('.skills-list',
+        {
+            y: "-50%",
+            opacity: 0
+        },
+        {
+            y: "0px",
+            opacity: 1,
+            duration: .4,
+            stagger: .4
+        },
+        "<.1"
+    );
+}
 
-skillsAnime.fromTo('.d-skills-list',
+const skillsDesktopAnimationTrigger = () => {
+    skillsDesktopAstroFlyTrigger();
+    skillsDesktopRoverTrigger();
+    skillsDesktopListAnimeTrigger();
+    return skillsDesktopAnime;
+}
+
+const createDesktopScrollTrigger = () => 
+    ScrollTrigger.create({
+        animation: skillsDesktopAnimationTrigger(),
+        trigger: "#skills",
+        pin: true,
+        anticipatePin: 1,
+        scrub: true,
+        start: "top top",
+        end: "+=3000",
+    });
+
+// Mobile Animation
+const skillsMobileAstroFlyTrigger = () => {
+    skillsMobileAnime.to('#skills-astro-fly',
+        {
+            top: "30%",
+            left: "220%",
+            duration: 2,
+        },
+    );
+}
+
+const skillsMobileRoverTrigger = () => {
+    gsap.to('#rover',{
+        y: '-1px',
+        duration: .1,
+        repeat: -1,
+        yoyou: true
+    });
+    skillsMobileAnime.from('#rover',
     {
-        y: "-50%",
-        opacity: 0
+        right: "100%"
     },
-    {
-        y: "0px",
-        opacity: 1,
-        duration: .4,
-        stagger: .4
-    },
-    "<.1"
-);
+    "<1");
+}
 
-ScrollTrigger.create({
-    animation: skillsAnime,
-    trigger: "#skills",
-    pin: true,
-    anticipatePin: 1,
-    scrub: true,
-    start: "top top",
-    end: "+=3000",
+const skillsMobileListAnimeTrigger = () => {
+    skillsMobileAnime.to('.skills-list',
+        {
+            y: "0",
+            opacity: 1,
+            stagger: .5,
+            duration: 5
+        }
+    );
+}
+
+const skillsMobileAnimationTrigger = () => {
+    skillsMobileAstroFlyTrigger();
+    skillsMobileRoverTrigger();
+    skillsMobileListAnimeTrigger();
+    return skillsMobileAnime;
+}
+
+const createMobileScrollTrigger = () => 
+    ScrollTrigger.create({
+        animation: skillsMobileAnimationTrigger(),
+        trigger: "#skills",
+        pin: true,
+        scrub: true,
+        start: "top top",
+    });
+
+ScrollTrigger.matchMedia({
+	// desktop
+	"(min-width: 800px)": function() {
+        createDesktopScrollTrigger();
+    }, 
+  
+	// mobile
+	"(max-width: 799px)": function() {
+        createMobileScrollTrigger();
+    }
 });
 
+// ****************************************************************** //
+// ***************************** Portfolio ************************** //
+// ****************************************************************** //
 
 const portfolioAnime = gsap.timeline();
 
@@ -250,7 +332,9 @@ ScrollTrigger.create({
     end: "+=2000",
 });
 
-// Contact Animation
+// ****************************************************************** //
+// ***************************** Contact **************************** //
+// ****************************************************************** //
 
 const contactAnime = gsap.timeline();
 
@@ -266,8 +350,13 @@ contactAnime.fromTo('#contact-astro-fly',
             path: 'M -28 30 C 486 62 384 193 676 62 C 1165 185 799 305 1285 237 C 1437 62 1734.3333 341.6667 1960 386'
         },
         duration: 2,
-    },
+    }
 );
+
+contactAnime.to('.astro-to-march',{
+    left: "65%",
+    duration: 1
+})
 
 ScrollTrigger.create({
     animation: contactAnime,

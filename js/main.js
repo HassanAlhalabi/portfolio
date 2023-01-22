@@ -349,7 +349,7 @@ contactAnime.fromTo('#contact-astro-fly',
         motionPath: {
             path: 'M -28 30 C 486 62 384 193 676 62 C 1165 185 799 305 1285 237 C 1437 62 1734.3333 341.6667 1960 386'
         },
-        duration: 2,
+        duration: 1.5,
     }
 );
 

@@ -652,12 +652,17 @@ h2#my-job {
     background-position: center;
     position: relative;
     z-index: 50;
-    overflow: hidden;
 }
 
 .contact-me {
     padding-bottom: 100px;
     background-color: var(--main-color);
+}
+
+.contact-top-wave {
+    position: absolute;
+    width: 100%;
+    bottom: 100%;
 }
 
 #contact-astro-fly {

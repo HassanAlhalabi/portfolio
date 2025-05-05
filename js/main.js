@@ -1,6 +1,7 @@
 // Page Loader
 window.addEventListener("load", () => {
   document.getElementById("page-loader").style.display = "none";
+  document.body.style.overflowY = "auto";
 });
 
 // GSAP ANIMATION

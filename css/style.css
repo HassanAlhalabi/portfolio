@@ -58,6 +58,7 @@ body {
   letter-spacing: 2px;
   background-color: var(--main-color);
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 /* Headers */
@@ -162,7 +163,12 @@ ul {
   top: 0;
   left: 0;
   z-index: 99999999;
-  background-image: url("../imgs/loader-bg.webp");
+  background: #0f021a;
+  background: radial-gradient(
+    circle,
+    rgba(15, 2, 26, 1) 0%,
+    rgba(27, 8, 36, 1) 100%
+  );
   background-size: cover;
   padding: 10px;
   display: flex;
@@ -422,13 +428,13 @@ h2#my-job {
 }
 
 .skills-list:nth-of-type(3) {
-  bottom: 10%;
-  right: 10%;
+  bottom: 15%;
+  right: 15%;
 }
 
 .skills-list:nth-of-type(4) {
-  bottom: 10%;
-  left: 10%;
+  bottom: 15%;
+  left: 15%;
 }
 
 @media (max-width: 799px) {
@@ -720,15 +726,20 @@ h2#my-job {
 .social-link-holder a,
 .phone-number a {
   padding: 20px 20px 0px 0px;
+  font-size: 32px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  max-width: fit-content;
 }
 
 .social-link-holder a i {
   color: #fff;
-  font-size: clamp(4rem, 12vw, 2vw);
+  font-size: clamp(3rem, 10vw, 2vw);
 }
 
 .phone-number {
-  font-size: clamp(2.2rem, 12vw, 2vw);
+  font-size: clamp(2.2rem, 10vw, 2vw);
 }
 
 /******************************************************************/

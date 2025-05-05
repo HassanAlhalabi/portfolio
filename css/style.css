@@ -33,6 +33,12 @@
 
 /* Root  */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   --main-color: #0f0537;
 }
@@ -41,15 +47,17 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 /* Body */
 
 body {
   font-family: fantasy;
-  overflow-x: hidden;
   letter-spacing: 2px;
   background-color: var(--main-color);
+  overflow-x: hidden;
 }
 
 /* Headers */
@@ -62,7 +70,7 @@ h1 {
 h2 {
   color: var(--main-color);
   font-weight: bold;
-  font-size: 44px;
+  font-size: clamp(34px, 12vw, 2vw);
   padding: 30px 0px;
   text-transform: uppercase;
 }
@@ -115,29 +123,6 @@ ul {
   filter: brightness(0) invert(1);
 }
 
-.space-rocket {
-  position: relative;
-  width: 55px;
-  height: 75px;
-  left: 200px;
-}
-
-.space-rocket #astro-no-fire {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  right: 0;
-  z-index: 9;
-}
-
-.space-rocket #astro-fire {
-  position: absolute;
-  width: 30px;
-  top: 80%;
-  left: -24px;
-  animation: ignite 0.1s 0s infinite;
-}
-
 .bg {
   width: 100%;
   height: 100%;
@@ -145,6 +130,22 @@ ul {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.position-sticky {
+  position: sticky;
 }
 
 /* .desktop {
@@ -186,29 +187,50 @@ ul {
 #loading-astro-fly {
   transform: rotateY(180deg) rotate(25deg);
   left: 0;
+  min-width: 10vw;
+  min-height: fit-content;
+}
+
+.space-rocket {
+  position: relative;
+  width: 55px;
+  height: 75px;
+  left: 200px;
+}
+
+.space-rocket #astro-no-fire {
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 9;
+}
+
+.space-rocket #astro-fire {
+  position: absolute;
+  width: 40%;
+  top: 78%;
+  left: -30%;
+  animation: ignite 0.1s 0s infinite;
 }
 
 /******************************************************************/
 /***************************** Header *****************************/
 /******************************************************************/
 
+/* Header Image Section */
+
 header {
   position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
+  z-index: 1;
 }
 
 #my-name {
   font-size: 36px;
   font-weight: 800;
   color: #fff;
-}
-
-/* Header Image Section */
-
-header {
-  min-height: 100vh;
-  min-width: 100vw;
-  position: relative;
-  z-index: 1;
 }
 
 .header-star {
@@ -286,8 +308,8 @@ h2#my-job {
 }
 
 #alien-space-ship {
-  top: 40%;
-  left: 35%;
+  top: 35%;
+  left: 20vw !important;
   width: 8vw;
 }
 
@@ -403,7 +425,7 @@ h2#my-job {
   padding: 0;
   list-style: none;
   color: #fff;
-  font-size: 34px;
+  font-size: clamp(34px, 12vw, 2vw);
   text-shadow: 0px 2px 10px #1d0f67;
 }
 
@@ -430,8 +452,9 @@ h2#my-job {
 
 @media (max-width: 799px) {
   .skills-list {
-    transform: translateY(-50%);
+    transform: none !important;
     opacity: 0;
+    font-size: 18px;
   }
 
   .skills-list:nth-of-type(1) {
@@ -449,12 +472,14 @@ h2#my-job {
   .skills-list:nth-of-type(3) {
     top: 45%;
     left: 5%;
+    bottom: auto;
     right: auto;
   }
 
   .skills-list:nth-of-type(4) {
-    top: 75%;
+    top: 70%;
     left: 5%;
+    bottom: auto;
     right: auto;
   }
 }
@@ -479,9 +504,15 @@ h2#my-job {
   transform: rotateY(180deg);
 }
 
+@media (min-width: 1700px) {
+  #rover {
+    bottom: 25%;
+  }
+}
+
 @media (max-width: 799px) {
   #rover {
-    right: 20%;
+    right: 5% !important;
   }
 }
 
@@ -535,6 +566,7 @@ h2#my-job {
   z-index: 20;
   height: 100vh;
   width: 100vw;
+  padding: 1rem;
 }
 
 #portfolio-astro-fly {
@@ -596,16 +628,20 @@ h2#my-job {
   margin: 0;
   padding: 0;
   color: #fff;
-  font-size: 26px;
+  font-size: clamp(1.4rem, 12vw, 2vw);
   text-shadow: 0px 2px 10px #1d0f67;
   list-style: none;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .projects-list li:nth-child(1) {
   padding: 18px;
   background-color: #ffffff2e;
   border-radius: 60% 0px;
-  text-align: center;
+  width: 300px;
+  min-width: fit-content;
+  margin: auto;
 }
 
 .projects-list:nth-of-type(1) {
@@ -626,6 +662,28 @@ h2#my-job {
 
 .projects-list a {
   padding: 0;
+}
+
+@media (max-width: 799px) {
+  .portfolio-wrapper {
+    flex-wrap: wrap;
+    justify-content: center !important;
+    position: sticky !important;
+    top: 10px;
+    z-index: 999;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .projects-list {
+    font-size: 1.2rem;
+    left: 20px !important;
+    right: auto !important;
+    transform: none !important;
+    position: static !important;
+    min-width: fit-content;
+    width: 50%;
+  }
 }
 
 /******************************************************************/
@@ -697,11 +755,11 @@ h2#my-job {
 
 .social-link-holder a i {
   color: #fff;
-  font-size: 56px;
+  font-size: clamp(4rem, 12vw, 2vw);
 }
 
 .phone-number {
-  font-size: 36px;
+  font-size: clamp(2.2rem, 12vw, 2vw);
 }
 
 /******************************************************************/

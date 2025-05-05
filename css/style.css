@@ -119,6 +119,11 @@ ul {
 /***************************** Framework **************************/
 /******************************************************************/
 
+.container {
+  margin: auto;
+  width: 80vw;
+}
+
 .img-whiten {
   filter: brightness(0) invert(1);
 }
@@ -346,7 +351,7 @@ h2#my-job {
 }
 
 .skills-top-wave {
-  bottom: calc(100% - 1px);
+  bottom: calc(100% - 4px);
 }
 
 #skills-astro-fly {
@@ -679,7 +684,7 @@ h2#my-job {
 .contact-top-wave {
   position: absolute;
   width: 100%;
-  bottom: 100%;
+  bottom: calc(100% - 4px);
 }
 
 .contact-top-wave img {

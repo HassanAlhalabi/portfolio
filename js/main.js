@@ -99,13 +99,6 @@ headerAnimation.fromTo(
   }
 );
 
-// freeAnimation.to("#astro-fly", {
-//   y: "10px",
-//   yoyo: true,
-//   repeat: -1,
-//   duration: 0.1,
-// });
-
 freeAnimation.to("#alien-space-ship", {
   y: "10%",
   yoyo: true,
@@ -379,14 +372,3 @@ const explode = () => {
     }
   );
 };
-
-// window.onscroll = () => {
-//   const offsetLeft =
-//     window.innerWidth -
-//     document.getElementById("contact-astro-fly").getBoundingClientRect().left;
-//   if (offsetLeft <= 0 && offsetLeft >= -100) {
-//     setTimeout(() => explode(), 1000);
-//   } else {
-//     clearTimeout(explode);
-//   }
-// };

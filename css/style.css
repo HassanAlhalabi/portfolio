@@ -148,26 +148,6 @@ ul {
   position: sticky;
 }
 
-/* .desktop {
-    display: block;
-}
-
-@media(max-width: 768px) {
-    .desktop {
-        display: none;
-    }
-}
-
-.mobile {
-    display: none;
-}
-
-@media(max-width: 768px) {
-    .mobile {
-        display: block;
-    }
-} */
-
 /*************** Page Loader ****************/
 
 #page-loader {
@@ -224,7 +204,6 @@ header {
   position: relative;
   min-height: 100vh;
   min-width: 100vw;
-  position: relative;
   z-index: 1;
 }
 
@@ -246,10 +225,6 @@ header {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  /* position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 2; */
 }
 
 #header-rocks,
@@ -546,18 +521,6 @@ h2#my-job {
   animation: smoke2 0.5s 0.6s infinite;
 }
 
-/* .rocks-holder {
-    position: absolute;
-    bottom: 0;
-    left: 0;;
-    display: flex;
-}
-
-.rocks-holder .rock {
-    width: 130px;
-    filter: drop-shadow(0px 0px 15px #FFF);
-} */
-
 /******************************************************************/
 /***************************** Portfolio **************************/
 /******************************************************************/
@@ -784,7 +747,6 @@ h2#my-job {
   display: block;
   position: absolute;
   bottom: -35px;
-  left: 50%;
   margin-left: -20px;
   height: 0px;
   width: 0px;
@@ -840,45 +802,5 @@ h2#my-job {
   }
   to {
     transform: rotateZ(360deg);
-  }
-}
-
-/* Explosion Animation */
-
-.grenade {
-  position: relative;
-}
-
-.grenade .boom {
-  position: absolute;
-  background-color: #e79908;
-  border-radius: 50%;
-}
-
-.grenade .boom:nth-child(1) {
-  width: 50px;
-  height: 50px;
-}
-.grenade .boom:nth-child(2) {
-  width: 60px;
-  height: 60px;
-}
-
-.grenade .boom:nth-child(3) {
-  width: 150px;
-  height: 150px;
-}
-
-.grenade .boom:nth-child(4) {
-  width: 250px;
-  height: 250px;
-}
-
-@keyframes expolode {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
   }
 }

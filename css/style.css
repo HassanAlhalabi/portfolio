@@ -177,7 +177,8 @@ ul {
   top: 0;
   left: 0;
   z-index: 99999999;
-  background-color: #000;
+  background-image: url("../imgs/loader-bg.webp");
+  background-size: cover;
   padding: 10px;
   display: flex;
   align-items: center;
